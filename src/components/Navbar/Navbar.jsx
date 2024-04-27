@@ -10,22 +10,12 @@ const Navbar = () => {
         logOut()
             .then(() => {
                 Swal.fire({
-  title: "Are you sure?",
-  text: "You won't be able to revert this!",
-  icon: "warning",
-  showCancelButton: true,
-  confirmButtonColor: "#3085d6",
-  cancelButtonColor: "#d33",
-  confirmButtonText: "Yes, delete it!"
-}).then((result) => {
-  if (result.isConfirmed) {
-    Swal.fire({
-      title: "Logged Out!",
-      text: "Your file has been logged outk.",
-      icon: "success"
-    });
-  }
-});
+                    position: "top-end",
+                    icon: "success",
+                    title: "Logged Out Successfully",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
             })
             .catch()
     }
@@ -77,16 +67,16 @@ const Navbar = () => {
                 {
                     user ?
                         <>
-                            <button onClick={handleSignOut} className="btn rounded-none bg-black text-white text-lg px-8">Log Out</button>
-
-
                             <Link to="/user"><div className="dropdown dropdown-hover">
-                                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar"><div className="  rounded-full">
-                                    <img alt="Tailwind CSS Navbar component" src={user?.photoURL
-                                        || "https://i.ibb.co/Y0RBQqQ/download.png"} />
-                                </div></div>
-                                <ul tabIndex={0} className="-ml-10 dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box ">
+                                <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                                    <div className="  rounded-full">
+                                        <img alt="Tailwind CSS Navbar component" src={user?.photoURL
+                                            || "https://i.ibb.co/Y0RBQqQ/download.png"} />
+                                    </div>
+                                </div>
+                                <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 -ml-36 ">
                                     <li><a>{user?.displayName || "User Name not found"}</a></li>
+                                    <button onClick={handleSignOut} className="btn rounded-none bg-black text-white text-lg px-8 rounded-xl">Log Out</button>
                                 </ul>
                             </div></Link>
                         </>
@@ -96,7 +86,7 @@ const Navbar = () => {
                                 <button className="btn rounded-none bg-black text-white text-lg px-8">Login</button>
                             </Link>
                             <Link to='/register'>
-                                <button className="btn rounded-none bg-orange-500 text-white text-lg px-8 ml-4">Register</button>
+                                <button className="btn rounded-none bg-orange-500 text-white text-lg px-8 ">Register</button>
                             </Link>
                         </>
                 }
