@@ -6,12 +6,17 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily:  {
+      fontFamily: {
         poppins: "'Poppins', sans-serif",
         lilita: "'Lilita One', sans-serif"
       }
     },
   },
   plugins: [require("daisyui")],
+
+
+  daisyui: {
+    themes: ["light", "dark"],
+  },
 }
 

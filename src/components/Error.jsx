@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Error = () => {
     return (
-        <div>
+        <div className="mt-20">
             <section className="flex items-center h-full p-16 bg-gray-50 text-gray-800">
                 <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
                     <div className="max-w-md text-center">

@@ -9,7 +9,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Swal from "sweetalert2";
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
 
     const { register, handleSubmit, formState: { errors } } = useForm();
 
@@ -34,10 +34,10 @@ const Register = () => {
         // create user
         createUser(email, password,)
             .then(() => {
-                // updateUserProfile(fullName, image)
-                //     .then(() => {
-                //         navigate(from);
-                //     })
+                updateUserProfile(fullName, image)
+                    .then(() => {
+                        navigate(from);
+                    })
                 Swal.fire({
                     position: "top-end",
                     icon: "success",

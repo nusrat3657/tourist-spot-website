@@ -33,10 +33,10 @@ const Navbar = () => {
         {
             user ?
                 <>
-                    <li><NavLink to="/" className={({ isActive }) =>
+                    <li><NavLink to="/add" className={({ isActive }) =>
                         isActive ? "font-bold  border-2  rounded-lg border-black" : ""
                     }>Add Tourists Spot</NavLink></li>
-                    <li><NavLink to="/" className={({ isActive }) =>
+                    <li><NavLink to="/list" className={({ isActive }) =>
                         isActive ? "font-bold  border-2  rounded-lg border-black" : ""
                     }>My List</NavLink></li>
                 </>
@@ -67,7 +67,7 @@ const Navbar = () => {
                 {
                     user ?
                         <>
-                            <Link to="/user"><div className="dropdown dropdown-hover">
+                            <Link to="/user"><div className="dropdown dropdown-hover relative z-30">
                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                     <div className="  rounded-full">
                                         <img alt="Tailwind CSS Navbar component" src={user?.photoURL

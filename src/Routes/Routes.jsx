@@ -4,6 +4,10 @@ import Home from "../components/pages/Home";
 import Login from "../components/pages/Login";
 import Register from "../components/pages/Register";
 import Error from "../components/Error";
+import AllTouristSpot from "../components/pages/AllTouristSpot";
+import PrivateRoute from "./PrivateRoute";
+import AddTouristSpot from "../components/pages/AddTouristSpot";
+import MyList from "../components/pages/MyList";
 
 
 const router = createBrowserRouter([
@@ -24,11 +28,24 @@ const router = createBrowserRouter([
                 element: <Register></Register>
             },
             {
-                path: '/error',
-                element: <Error></Error>
-            }
+                path: '/all',
+                element: <AllTouristSpot></AllTouristSpot>
+            },
+            {
+                path: '/add',
+                element: <PrivateRoute><AddTouristSpot></AddTouristSpot></PrivateRoute>
+            },
+            {
+                path: '/list',
+                element: <PrivateRoute><MyList></MyList></PrivateRoute>
+            },
+            
         ]
     },
+    {
+                path: '*',
+                element: <Error></Error>
+            }
 ]);
 
 export default router;

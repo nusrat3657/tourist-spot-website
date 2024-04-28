@@ -1,0 +1,93 @@
+import Navbar from "../Navbar/Navbar";
+
+
+const AddTouristSpot = () => {
+    return (
+        <div>
+            <Navbar></Navbar>
+            <div className="bg-black/20 p-24">
+                <h2 className="text-3xl font-bold">Add Tourist Spot</h2>
+                <form>
+                    {/* form row */}
+                    <div className="md:flex mb-8">
+                        <div className="form-control md:w-1/2">
+                            <label className="label">
+                                <span className="label-text">Coffee Name</span>
+                            </label>
+                            <label className="input-group">
+                                <input type="text" name="name" placeholder="Coffee Name" className="input input-bordered w-full" />
+                            </label>
+
+                        </div>
+                        <div className="form-control md:w-1/2 ml-4">
+                            <label className="label">
+                                <span className="label-text">Available Quantity</span>
+                            </label>
+                            <label className="input-group">
+                                <input type="text" name="quantity" placeholder="Available Quantity" className="input input-bordered w-full" />
+                            </label>
+
+                        </div>
+                    </div>
+                    {/* form row */}
+                    <div className="md:flex mb-8">
+                        <div className="form-control md:w-1/2">
+                            <label className="label">
+                                <span className="label-text">Supplier</span>
+                            </label>
+                            <label className="input-group">
+                                <input type="text" name="supplier" placeholder="Supplier Name" className="input input-bordered w-full" />
+                            </label>
+
+                        </div>
+                        <div className="form-control md:w-1/2 ml-4">
+                            <label className="label">
+                                <span className="label-text">Taste</span>
+                            </label>
+                            <label className="input-group">
+                                <input type="text" name="taste" placeholder="Taste" className="input input-bordered w-full" />
+                            </label>
+
+                        </div>
+                    </div>
+                    {/* form row */}
+                    <div className="md:flex mb-8">
+                        <div className="form-control md:w-1/2">
+                            <label className="label">
+                                <span className="label-text">Category</span>
+                            </label>
+                            <label className="input-group">
+                                <input type="text" name="category" placeholder="Category" className="input input-bordered w-full" />
+                            </label>
+
+                        </div>
+                        <div className="form-control md:w-1/2 ml-4">
+                            <label className="label">
+                                <span className="label-text">Details</span>
+                            </label>
+                            <label className="input-group">
+                                <input type="text" name="details" placeholder="Details" className="input input-bordered w-full" />
+                            </label>
+
+                        </div>
+                    </div>
+                    {/* form row */}
+                    <div className="mb-8">
+                        <div className="form-control md:w-full">
+                            <label className="label">
+                                <span className="label-text">Photo URL</span>
+                            </label>
+                            <label className="input-group">
+                                <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full" />
+                            </label>
+
+                        </div>
+                    </div>
+                    <input type="submit" value="ADD" className="btn btn-block bg-black/90 text-white text-lg py-2" />
+                </form>
+            </div>
+        </div>
+    );
+};
+
+export default AddTouristSpot;
