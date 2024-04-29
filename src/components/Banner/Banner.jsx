@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 
 
 
@@ -30,7 +31,8 @@ const Banner = () => {
             </div>
             <div className="lg:ml-[400px] md:ml-[120px] text-center absolute text-slate-600 md:-mt-[430px]  bg-white/60 lg:p-6 md:p-4 rounded-xl">
                 <div className="max-w-md">
-                    <h1 className="text-5xl font-bold">Hello there</h1>
+                
+                    <h1 className="text-5xl font-bold"><Typewriter Hello Travellers />!</h1>
                     <p className="py-6 text-black">Find exactly what you need, anywhere in the world with free cancellation options.</p>
                     <button className="btn rounded-none bg-orange-500 border-none text-white text-lg px-8 "><Link to="/all">Explore Now</Link></button>
                 </div>

@@ -67,7 +67,7 @@ const Navbar = () => {
                 {
                     user ?
                         <>
-                            <Link to="/user"><div className="dropdown dropdown-hover relative z-30">
+                            <div className="dropdown dropdown-hover relative z-30">
                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                                     <div className="  rounded-full">
                                         <img alt="Tailwind CSS Navbar component" src={user?.photoURL
@@ -76,9 +76,9 @@ const Navbar = () => {
                                 </div>
                                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52 -ml-36 ">
                                     <li><a>{user?.displayName || "User Name not found"}</a></li>
-                                    <button onClick={handleSignOut} className="btn rounded-none bg-black text-white text-lg px-8 rounded-xl">Log Out</button>
+                                    <button onClick={handleSignOut} className="btn  bg-black text-white text-lg px-8 rounded-xl">Log Out</button>
                                 </ul>
-                            </div></Link>
+                            </div>
                         </>
                         :
                         <>

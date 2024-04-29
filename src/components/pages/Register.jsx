@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -14,6 +14,11 @@ const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
     const [showPassword, setShowPassword] = useState(false);
+
+    const from =  '/'
+
+    const navigate = useNavigate();
+    console.log('location in the login page', location);
 
     const onSubmit = (data) => {
         const { email, password, image, fullName } = data;
