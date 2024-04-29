@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import {   Link, useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -7,9 +7,10 @@ import Navbar from "../Navbar/Navbar";
 
 const MyList = () => {
     const { user } = useContext(AuthContext);
-    const spots = useLoaderData();
-    const remaining = spots.filter(spot => spot.email === user.email);
+    const spotData = useLoaderData();
+    const remaining = spotData.filter(spot => spot.email === user.email);
     console.log(remaining);
+    const [spots, setSpots] = useState(spotData);
 
     const handleDelete = _id => {
         console.log(_id);
@@ -35,6 +36,8 @@ const MyList = () => {
                                 text: "Your added spot has been deleted.",
                                 icon: "success"
                             });
+                            const remaining = spots.filter(spt => spt._id !== _id);
+                            setSpots(remaining);
                         }
                     })
             }

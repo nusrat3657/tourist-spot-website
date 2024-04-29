@@ -10,7 +10,6 @@ import AddTouristSpot from "../components/pages/AddTouristSpot";
 import MyList from "../components/pages/MyList"
 import Update from "../components/Update/Update";
 import Details from "../components/Details/Details";
-import UpdtaeSpot from "../components/UpdateSpot/UpdtaeSpot";
 
 
 const router = createBrowserRouter([

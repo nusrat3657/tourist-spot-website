@@ -42,7 +42,7 @@ const AddTouristSpot = () => {
             if (data.insertedId) {
                 Swal.fire({
                     title: "Success!",
-                    text: "User Added Successfully",
+                    text: "Spot Added Successfully",
                     icon: "success",
                     confirmButtonText: 'Cool'
                   });
