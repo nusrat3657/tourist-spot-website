@@ -8,6 +8,8 @@ import AllTouristSpot from "../components/pages/AllTouristSpot";
 import PrivateRoute from "./PrivateRoute";
 import AddTouristSpot from "../components/pages/AddTouristSpot";
 import MyList from "../components/pages/MyList";
+// import Details from "../components/Details/Details";
+import Update from "../components/Update/Update";
 import Details from "../components/Details/Details";
 
 
@@ -21,11 +23,21 @@ const router = createBrowserRouter([
                 element: <Home></Home>,
                 loader: () => fetch('http://localhost:5000/spot')
             },
+            // {
+            //     path: '/detailsSpot/:id',
+            //     element: <PrivateRoute><Details></Details></PrivateRoute>,
+            //     // loader: ({params}) => fetch(`http://localhost:5000/spot/${params.id}`)
+            //     loader: ({params}) => fetch(`http://localhost:5000/spot/${params.id}`)
+            // },
             {
-                path: '/detailsSpot/:id',
-                element: <PrivateRoute><Details></Details></PrivateRoute>,
-                // loader: ({params}) => fetch(`http://localhost:5000/spot/${params.id}`)
+                path: 'detailsSpot/:id',
+                element: <Details></Details>,
                 loader: ({params}) => fetch(`http://localhost:5000/spot/${params.id}`)
+            },
+            {
+                path:'/update/:id',
+                element: <PrivateRoute><Update></Update></PrivateRoute>,
+                loader: (params) => fetch(`http://localhost:5000/spot/${params.id}`)
             },
             {
                 path: '/login',

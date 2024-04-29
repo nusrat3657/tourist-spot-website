@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useReducer } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Navbar from "../Navbar/Navbar";
 
@@ -10,6 +10,11 @@ const MyList = () => {
     const spots = useLoaderData();
     const remaining = spots.filter(spot => spot.email === user.email);
     console.log(remaining);
+
+    const handleDelete = _id => {
+        console.log(_id);
+    }
+    
     return (
         <div>
             <Navbar></Navbar>
@@ -52,8 +57,12 @@ const MyList = () => {
                                 <td>{spot.seasonality}</td>
                                 <td>{spot.location}</td>
                                 <th>
-                                    <button className="btn btn-ghost bg-black text-white btn-s">Update</button>
-                                    <button className="btn btn-ghost bg-red-600 text-white  btn-s ml-4">Delete</button>
+                                    {/* <Link to={`update/${spot._id}`}> */}
+                                        <button className="btn btn-ghost bg-black text-white btn-s">Update</button>
+                                        {/* </Link> */}
+                                    <button 
+                                    onClick={() => handleDelete(spot._id)}
+                                    className="btn btn-ghost bg-red-600 text-white  btn-s ml-4">Delete</button>
                                 </th>
                             </tr>)
                         }

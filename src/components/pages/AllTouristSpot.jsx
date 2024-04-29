@@ -22,7 +22,7 @@ const AllTouristSpot = ({spot}) => {
                                         <p className="font-semibold mt-2">Travel Time: <span className="font-bold">{spot.travelTime}</span></p>
                                         <p className="font-semibold mt-2">Seasonality: <span className="font-bold">{spot.seasonality}</span></p>
                                     <div className="flex justify-end pt-4">
-                                        <Link to={`detailsSpots/${spot._id}`}><button className="btn text-white bg-black">View Details</button></Link>
+                                        <Link to={`/detailsSpot/${spot._id}`}><button className="btn text-white bg-black">View Details</button></Link>
                                     </div>
                                 </div>
                             </div>)
