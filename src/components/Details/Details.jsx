@@ -13,6 +13,7 @@ const Details = () => {
                     <h2 className="text-black text-4xl font-bold lg:mt-0 mt-8">{spot.spot} <span className='text-lg'>({spot.country})</span></h2>
                     <p className="my-5 text-lg">{spot.description}</p>
                     <hr />
+
                     <p className="my-3 text-lg "><span className="font-bold mr-2">Location: </span> {spot.location}</p>
                     <hr />
                     <p className="my-3 text-lg "><span className="font-bold mr-2">Seasonality: </span> {spot.seasonality}</p>
@@ -22,6 +23,11 @@ const Details = () => {
                     <p className="my-3 text-lg "><span className="font-bold mr-2">Visitors Per Year: </span>{spot.visitors}</p>
                     <hr />
                     <p className="my-3 text-lg "><span className="font-bold mr-2">Average Cost: </span>{spot.cost}</p>
+                    <hr />
+                    <div className='flex gap-5'>
+                        <p className="my-3 "><span className="font-bold mr-2">User: </span>{spot.name}</p>
+                        <p className="my-3 "><span className="font-bold mr-2">Email: </span>{spot.email}</p>
+                    </div>
                     <hr />
                     <div>
                         <Link to="/"><button className="btn border-2 bg-black text-white mt-4 text-lg">Go Home</button></Link>

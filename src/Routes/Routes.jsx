@@ -7,10 +7,10 @@ import Error from "../components/Error";
 import AllTouristSpot from "../components/pages/AllTouristSpot";
 import PrivateRoute from "./PrivateRoute";
 import AddTouristSpot from "../components/pages/AddTouristSpot";
-import MyList from "../components/pages/MyList";
-// import Details from "../components/Details/Details";
+import MyList from "../components/pages/MyList"
 import Update from "../components/Update/Update";
 import Details from "../components/Details/Details";
+import UpdtaeSpot from "../components/UpdateSpot/UpdtaeSpot";
 
 
 const router = createBrowserRouter([
@@ -23,22 +23,21 @@ const router = createBrowserRouter([
                 element: <Home></Home>,
                 loader: () => fetch('http://localhost:5000/spot')
             },
-            // {
-            //     path: '/detailsSpot/:id',
-            //     element: <PrivateRoute><Details></Details></PrivateRoute>,
-            //     // loader: ({params}) => fetch(`http://localhost:5000/spot/${params.id}`)
-            //     loader: ({params}) => fetch(`http://localhost:5000/spot/${params.id}`)
-            // },
             {
                 path: 'detailsSpot/:id',
-                element: <Details></Details>,
-                loader: ({params}) => fetch(`http://localhost:5000/spot/${params.id}`)
+                element: <PrivateRoute><Details></Details></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/spot/${params.id}`)
             },
             {
-                path:'/update/:id',
+                path: '/update/:id',
                 element: <PrivateRoute><Update></Update></PrivateRoute>,
-                loader: (params) => fetch(`http://localhost:5000/spot/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/spot/${params.id}`)
             },
+            // {
+            //     path: 'update/:id',
+            //     element: <UpdtaeSpot></UpdtaeSpot>,
+            //     loader: ({params}) => fetch(`http://localhost:5000/spot/${params.id}`)
+            // },
             {
                 path: '/login',
                 element: <Login></Login>
@@ -61,13 +60,13 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><MyList></MyList></PrivateRoute>,
                 loader: () => fetch('http://localhost:5000/spot')
             },
-            
+
         ]
     },
     {
-                path: '*',
-                element: <Error></Error>
-            }
+        path: '*',
+        element: <Error></Error>
+    }
 ]);
 
 export default router;

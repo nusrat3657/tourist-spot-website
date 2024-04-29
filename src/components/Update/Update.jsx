@@ -1,11 +1,60 @@
 import React from 'react';
+import { useContext } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../../providers/AuthProvider';
 
 const Update = () => {
+    const {user} = useContext(AuthContext);
+    const spot = useLoaderData();
+
+    const handleAddSpot = event => {
+        event.preventDefault();
+
+        const form = event.target;
+
+        const name = form.name.value;
+        const email = form.email.value;
+        const spot = form.spot.value;
+        const country = form.country.value;
+        const location = form.location.value;
+        const cost = form.cost.value;
+        const seasonality = form.seasonality.value;
+        const travelTime = form.travelTime.value;
+        const visitors = form.visitors.value;
+        const photo = form.photo.value;
+        const description = form.description.value;
+
+        const newSpot = {name, email, spot, country, location, cost, seasonality, travelTime, visitors, photo, description}
+        console.log(newSpot);
+
+        // send data to the server
+        fetch('http://localhost:5000/spot', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newSpot)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if (data.insertedId) {
+                Swal.fire({
+                    title: "Success!",
+                    text: "User Added Successfully",
+                    icon: "success",
+                    confirmButtonText: 'Cool'
+                  });
+            }
+        })
+    }
+
     return (
         <div>
             <div className="bg-black/20 lg:px-24 px-6 lg:py-16 py-6">
-                <h2 className="text-3xl font-bold mb-10 text-center ">Add Tourist Spot</h2>
-                <form onSubmit={handleAddSpot}>
+                <h2 className="text-3xl font-bold mb-10 text-center ">Update Tourist Spot</h2>
+                <form>
                     {/* form row */}
                     <div className="md:flex mb-8">
                         <div className="form-control md:w-1/2">
@@ -34,7 +83,7 @@ const Update = () => {
                                 <span className="label-text  font-bold">Tourist Spot Name</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="spot" placeholder="Tourists Spot Name" className="input input-bordered w-full" />
+                                <input type="text" name="spot" defaultValue={spot.spot} placeholder="Tourists Spot Name" className="input input-bordered w-full" />
                             </label>
 
                         </div>
