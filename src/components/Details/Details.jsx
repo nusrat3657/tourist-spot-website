@@ -10,7 +10,7 @@ const Details = () => {
                     <img className="rounded-xl" src={spot.photo} alt="" />
                 </div>
                 <div className="animate__animated animate__rotateInDownRight">
-                    <h2 className="text-black text-4xl font-bold lg:mt-0 mt-8">{spot.spot} <span className='text-lg'>({spot.country})</span></h2>
+                    <h2 className="text-black text-4xl font-bold lg:mt-0 mt-8">{spot.spot} <span className='text-lg'>{spot.country}</span></h2>
                     <p className="my-5 text-lg">{spot.description}</p>
                     <hr />
 
