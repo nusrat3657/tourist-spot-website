@@ -28,7 +28,7 @@ console.log(spotData);
         console.log(updatedSpot);
 
         // send data to the server
-        fetch(`http://localhost:5000/spot/${spotData._id}`, {
+        fetch(`https://assignment-10-swart.vercel.app/spot/${spotData._id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

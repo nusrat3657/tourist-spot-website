@@ -29,7 +29,7 @@ const AddTouristSpot = () => {
         console.log(newSpot);
 
         // send data to the server
-        fetch('http://localhost:5000/spot', {
+        fetch('https://assignment-10-swart.vercel.app/spot', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

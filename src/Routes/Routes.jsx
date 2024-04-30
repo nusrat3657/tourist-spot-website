@@ -20,23 +20,18 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/spot')
+                loader: () => fetch('https://assignment-10-swart.vercel.app/spot')
             },
             {
                 path: 'detailsSpot/:id',
                 element: <PrivateRoute><Details></Details></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/spot/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-10-swart.vercel.app/spot/${params.id}`)
             },
             {
                 path: '/update/:id',
                 element: <PrivateRoute><Update></Update></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/spot/${params.id}`)
+                loader: ({params}) => fetch(`https://assignment-10-swart.vercel.app/spot/${params.id}`)
             },
-            // {
-            //     path: 'update/:id',
-            //     element: <UpdtaeSpot></UpdtaeSpot>,
-            //     loader: ({params}) => fetch(`http://localhost:5000/spot/${params.id}`)
-            // },
             {
                 path: '/login',
                 element: <Login></Login>
@@ -48,7 +43,7 @@ const router = createBrowserRouter([
             {
                 path: '/all',
                 element: <AllTouristSpot></AllTouristSpot>,
-                loader: () => fetch('http://localhost:5000/spot')
+                loader: () => fetch('https://assignment-10-swart.vercel.app/spot')
             },
             {
                 path: '/add',
@@ -57,7 +52,7 @@ const router = createBrowserRouter([
             {
                 path: '/list',
                 element: <PrivateRoute><MyList></MyList></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/spot')
+                loader: () => fetch('https://assignment-10-swart.vercel.app/spot')
             },
 
         ]
@@ -69,3 +64,4 @@ const router = createBrowserRouter([
 ]);
 
 export default router;
+
