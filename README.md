@@ -1,8 +1,28 @@
-# React + Vite
+# JourneyQuest
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Live Site](https://assignment-10-5e6b0.web.app/)
 
-Currently, two official plugins are available:
+## About
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+JourneyQuest is a comprehensive platform designed for travel enthusiasts, providing tools and resources to plan, discover, and share travel experiences.
+
+## Features
+
+- **Destination Discovery**: Explore a diverse range of destinations, from popular tourist spots to off-the-beaten-path gems.
+- **Interactive Trip Planning**: Plan your itinerary with ease using our intuitive trip planner, complete with customizable maps and guides.
+- **Real-time Updates**: Stay informed with real-time updates on flight schedules, weather conditions, and travel advisories.
+- **Community Engagement**: Connect with fellow travelers, share experiences, and discover insider tips and recommendations.
+- **Seamless Booking**: Book flights, accommodations, and activities directly through WanderlustX for a hassle-free travel experience.
+
+## Characteristics
+
+- User-friendly interface with intuitive navigation.
+- Responsive design ensures compatibility across devices.
+- Powerful search functionality for quick destination discovery.
+- Personalized user profiles for saving favorite destinations and sharing travel experiences.
+- Social media integration for easy sharing of travel adventures.
+
+## Packages
+
+- Lottie React
+- React-simple-typewrite
