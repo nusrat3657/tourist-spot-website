@@ -4,8 +4,11 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
+// console.log('inside firebase config', import.meta.env.VITE_PASS);
+
 const firebaseConfig = {
-    apiKey: "AIzaSyBwRVj4fu3E_IXzmMivVRdSoD6u_dp64Lk",
+    apiKey: import.meta.env.VITE_APIKEY,
     authDomain: "assignment-10-5e6b0.firebaseapp.com",
     projectId: "assignment-10-5e6b0",
     storageBucket: "assignment-10-5e6b0.appspot.com",
