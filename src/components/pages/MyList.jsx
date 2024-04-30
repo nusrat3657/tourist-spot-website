@@ -57,7 +57,7 @@ const MyList = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>Spot Name (Country)</th>
                             <th>Travel Time</th>
                             <th>Total Visitors</th>
                             <th>Average Cost</th>
@@ -74,7 +74,7 @@ const MyList = () => {
                                     <div className="flex items-center gap-3">
                                         <div>
                                             <div className="font-bold">{spot.spot}</div>
-                                            <div className="text-sm opacity-50">{spot.country}</div>
+                                            <div className="text-sm opacity-50">({spot.country})</div>
                                         </div>
                                     </div>
                                 </td>
@@ -85,7 +85,7 @@ const MyList = () => {
                                 <td>{spot.cost}</td>
                                 <td>{spot.seasonality}</td>
                                 <td>{spot.location}</td>
-                                <th>
+                                <th className="flex">
                                     <Link to={`/update/${spot._id}`}>
                                     <button className="btn btn-ghost bg-black text-white btn-s">Update</button>
                                     </Link>
