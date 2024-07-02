@@ -26,3 +26,10 @@ JourneyQuest is a comprehensive platform designed for travel enthusiasts, provid
 
 - Lottie React
 - React-simple-typewrite
+
+## How to clone and run this project
+
+Clone the repository,
+Install dependencies using npm install,
+Set up Firebase configuration keys using environment variables,
+Run the project using npm start.
